@@ -1,6 +1,8 @@
 name: CommentClassifier
 on:
-  pull_request:
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
   print-comment:
@@ -8,4 +10,4 @@ jobs:
     steps:
       - name: Print out comment
         run: |
-          echo "Comment ${{github.event.comment.body}} using pull_request"
+          echo "Comment ${{github.event.review}} using pull_request_review"
