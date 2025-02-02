@@ -33,10 +33,6 @@ public class PullRequest implements Serializable {
     private String state;
     private List<Comment> comments;
 
-    public boolean isNotOpen() {
-        return !this.state.equalsIgnoreCase(STATE_OPEN);
-    }
-
     public void setCommentAndExport(final RestTemplateHelper restTemplate) {
         setComments(restTemplate);
         if (CollectionUtils.isNotEmpty(comments)) {

@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 
 @Slf4j
@@ -16,11 +18,13 @@ public final class FileUtils {
 
     public static <T> void  exportObjectAsJson(T object, String path) throws IOException {
         log.info("Writing content into file {}...", path);
-        try(FileWriter fw = new FileWriter(path, true)) {
+        Path filePath = Path.of(path);
+        Files.deleteIfExists(filePath);
+        Files.createDirectory(filePath);
+        try(FileWriter fw = new FileWriter(path, false)) {
             GSON.toJson(object, fw);
             log.info("Content exported...");
         }
     }
-
 
 }
