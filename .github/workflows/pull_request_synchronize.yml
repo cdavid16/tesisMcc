@@ -1,4 +1,4 @@
-name: pull_request_review_comment_CommentClassifier
+name: pull_request_synchronize_CommentClassifier
 on:
   pull_request:
     types: [synchronize]
@@ -6,7 +6,6 @@ on:
 jobs:
   print-comment:
     runs-on: ubuntu-latest
-    if: github.event.action == 'synchronize'
     steps:
       - name: Print out comment
         run: |
