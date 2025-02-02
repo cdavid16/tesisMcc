@@ -7,6 +7,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.project.mcc.RestTemplateHelper;
 import org.project.mcc.utils.FileUtils;
+import org.project.mcc.utils.LanguageUtils;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class PullRequest implements Serializable {
     private void setComments(final RestTemplateHelper restTemplate) {
         log.info("Getting comments...");
         String endpoint = url  + getUrlWithParametersAndSecurity(COMMENT_API_PATH);
-        comments = restTemplate.getForArrayAsList(endpoint, Comment[].class);
+        comments = restTemplate.getForArrayAsList(endpoint, Comment[].class).stream().filter(comment -> LanguageUtils.isAsciiWord(comment.getBody())).collect(Collectors.toList());
         log.info("Comments exported...");
     }
 
