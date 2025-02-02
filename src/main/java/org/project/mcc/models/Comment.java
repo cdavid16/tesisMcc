@@ -2,8 +2,11 @@ package org.project.mcc.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.project.mcc.enums.CommentTypeEnum;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class Comment {
@@ -66,5 +69,6 @@ public class Comment {
     @JsonProperty("original_position") private int originalPosition;
     private int position;
     @JsonProperty("subject_type") private String subjectType;
-
+    private List<CommentTypeEnum> multiClasses = new ArrayList<>();
+    private CommentTypeEnum singleClass = CommentTypeEnum.NOT_DEFINED;
 }

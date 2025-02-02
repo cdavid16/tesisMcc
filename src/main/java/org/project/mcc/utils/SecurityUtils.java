@@ -12,7 +12,7 @@ public final class SecurityUtils {
         return url;
     }
 
-    private static String getAuthKey() {
+    public static String getAuthKey() {
         if (null == System.getenv("AUTH_KEY")) {
             throw new IllegalArgumentException("Authentication is not set, please set AUTH_KEY with the proper value");
         }
