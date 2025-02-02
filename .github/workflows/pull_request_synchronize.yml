@@ -1,0 +1,13 @@
+name: pull_request_review_comment_CommentClassifier
+on:
+  pull_request:
+    types: [synchronize]
+
+jobs:
+  print-comment:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'synchronize'
+    steps:
+      - name: Print out comment
+        run: |
+          echo "Comment ${{github.event.comment.body}} or ${{github.event.pull_request.body}} using pull_request"
