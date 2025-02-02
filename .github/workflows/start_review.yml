@@ -1,4 +1,4 @@
-name: CommentClassifier
+name: pull_request_review_Comment_Classifier
 on:
   pull_request_review:
     types:
