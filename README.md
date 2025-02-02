@@ -8,6 +8,12 @@ Below variables must be set using your own github token:
 - GH_TOKEN
 
 
-You must set proper fine grained access while generating your github token, is important to use it else the APIs are very limited in access wise.
+You must set proper fine-grained access while generating your github token, is important to use it else the APIs are very limited in access wise.
 
-Classification of the comment will happened over GitHub actions using _issues_ component due to each PR is an issue, 
+Next are the proposed classes for PR Comments:
+- **Best Practice**: This comment is related when you don't follow the best engineering practices.
+- **Business Domain**: This is when you are not following business related logic.
+- **Suggestion**: This is only a suggested change, but not mandatory.
+- **Documentation**: This change is related when you are not following the documentation.
+- **Question**: This is related with a question, not a change per se.
+- **Code Style**: This type of comment is related with the code style within the team.
