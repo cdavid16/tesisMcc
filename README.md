@@ -9,3 +9,5 @@ Below variables must be set using your own github token:
 
 
 You must set proper fine grained access while generating your github token, is important to use it else the APIs are very limited in access wise.
+
+Classification of the comment will happened over GitHub actions using _issues_ component due to each PR is an issue, 

@@ -1,0 +1,10 @@
+name: CommentClassifier
+on: [issue_comment]
+
+jobs:
+  print-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print out comment
+        run: |
+          echo "Comment ${{github.event.comment.body}} url: ${{ github.event.issue.comments_url }}"
