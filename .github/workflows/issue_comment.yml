@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Print out comment
         run: |
-          echo "Comment ${{github.event.comment.body}} url: ${{ github.event.issue.comments_url }}"
+          echo "Comment ${{github.event.comment.body}} using issue_comment"
