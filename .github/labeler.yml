@@ -16,19 +16,16 @@ Documentation:
       - any-glob-to-any-file: ['docs/*', 'guides/*', '**/*.md']
 
 utils:
-  - all:
-      - changed-files:
-          - any-glob-to-any-file: 'utils/*'
+  - changed-files:
+      - any-glob-to-any-file: 'utils/*'
 
 data:
-  - all:
-      - changed-files:
-          - any-glob-to-any-file: 'models/*'
+  - changed-files:
+      - any-glob-to-any-file: 'models/*'
 
 dependencies:
-  - all:
-      - changed-files:
-          - any-glob-to-any-file: ['**/*.pom', '**/*.properties']
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.pom', '**/*.properties']
 
 # Add 'feature' label to any PR where the head branch name starts with `feature` or has a `feature` section in the name
 feature:
