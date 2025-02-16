@@ -1,6 +1,6 @@
-name: close_pr_store_comments_aws
+name: close_pr_from_issues
 on:
-  pull_request:
+  pull_requests:
     types:
       - merged
 jobs:
@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Print out comment
         run: |
-          echo "El ID del pull request mergeado es: ${{ github.event.pull_request.id }} now let's try"
+          echo "Pull Request Id ${{ github.event.pull_request.id }} closed"
