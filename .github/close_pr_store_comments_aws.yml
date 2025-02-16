@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Print out comment
         run: |
-          echo "Pull Request Id ${{github.event.pull_request.id}}"
+          echo "Pull Request Id ${{github.event.pull_request.id}} for dummy pr"
