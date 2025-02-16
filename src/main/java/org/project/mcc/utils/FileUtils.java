@@ -22,5 +22,10 @@ public final class FileUtils {
         }
     }
 
+    public static boolean deleteFile(String filePath) {
+        File file = new File(filePath);
+        return file.delete();
+    }
+
 
 }
