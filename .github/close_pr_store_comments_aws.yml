@@ -1,19 +1,12 @@
 name: close_pr_store_comments_aws
 on:
-  issues:
+  pull_request:
     types:
-      - closed
+      - merged
 jobs:
   print-comment:
     runs-on: ubuntu-latest
     steps:
       - name: Print out comment
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "Pull Request Id ${{ github.event.pull_request.id }}"
-          elif [[ "${{ github.event_name }}" == "issues" ]]; then
-            echo "Issue closed (might be a PR): ${{ github.event.issue.number }}"
-            # If you need the PR ID, you might need to use the GitHub API to find it if the closed issue was a PR.
-          else
-            echo "Something else was closed."
-          fi
+          echo "El ID del pull request mergeado es: ${{ github.event.pull_request.id }}"
