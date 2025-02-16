@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Print out comment
         run: |
-          echo "El ID del pull request mergeado es: ${{ github.event.pull_request.id }}"
+          echo "El ID del pull request mergeado es: ${{ github.event.pull_request.id }} now let's try"
